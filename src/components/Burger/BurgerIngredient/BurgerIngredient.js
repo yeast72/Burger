@@ -84,7 +84,7 @@ const Seeds1 = styled.div`
     }
   `  
 
-const Meat = styled.dic`
+const Meat = styled.div`
     width: 80%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
@@ -148,7 +148,8 @@ class BurgerIngredient extends Component {
         default:
             ingredient = null
         }
-    }   
+        return ingredient;
+    }
 }
 
 BurgerIngredient.propTypes = {
