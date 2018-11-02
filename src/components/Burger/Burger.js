@@ -17,6 +17,7 @@ const Burger = styled.div`
         }
         
     }
+
 `
 
 const burger = (props) => {
@@ -25,12 +26,14 @@ const burger = (props) => {
             return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
                 return <BurgerIngredient key={igKey + i} type={igKey} />;
             } );
-        }).reduce((previous,curr)=> {
-            return previous.concat(curr);
         })
+        .reduce((previous,curr)=> {
+            return previous.concat(curr);
+        },[])
+        console.log(transformedIngredients)
 
-        if(transformedIngredients === 0) {
-            return <p>Plese add ingredients first</p>
+        if(transformedIngredients.length === 0) {
+            transformedIngredients =  <p>Plese add ingredients first</p>
         }
     return (
         <Burger>
