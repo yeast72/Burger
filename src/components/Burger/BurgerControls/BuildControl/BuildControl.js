@@ -17,14 +17,13 @@ const Button = styled.button`
     cursor: pointer;
     outline: none;
 
-    :disable {
+    :disabled {
         background-color: #AC9980;
         border: 1px solid #7E7365;
         color: #ccc;
         cursor: default;
-
     }
-    :hover :disable {
+    :hover :disabled {
         background-color: #AC9980;
         color: #ccc;
         cursor: not-allowed;
@@ -72,8 +71,9 @@ const Label = styled.div`
 const burgerControl = (props) =>(
         <Container>
             <Label>{props.label}</Label>
-            <More>More</More>
-            <Less>Less</Less>
+            <More 
+            onClick={props.added}>More</More>
+            <Less onClick={props.removed} disabled={props.disableButton}>Less</Less>
         </Container>
 )
 
